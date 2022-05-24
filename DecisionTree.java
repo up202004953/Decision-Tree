@@ -163,7 +163,7 @@ public class DecisionTree {
 
                 for (Entry e : all) {
                     double k = Double.parseDouble(e.getMap().get(title));
-                    int symb = Math.min(div(k - min,size), (int) (max/size));
+                    int symb = Math.min(div(k - min,size), discrLen - 1);
 
                     String name;
                     if (symb == 0) name = "]-inf, " + (min + size) + "[";
