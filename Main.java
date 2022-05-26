@@ -13,9 +13,11 @@ public class Main {
         DecisionTree dt = new DecisionTree(all);
         Node root = dt.ID3pp();
         Node.print(root);
-
-        ArrayList<Entry> test = (ArrayList<Entry>) read(args[1]);
-        dt.check_loo(root, test);
+        
+        if (args.length > 1) {
+            ArrayList<Entry> test = (ArrayList<Entry>) read(args[1]);
+            dt.check_loo(root, test);
+        }
     }
 
     public static List<Entry> read(String filename) {
