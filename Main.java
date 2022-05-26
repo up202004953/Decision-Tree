@@ -5,15 +5,13 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Main {
-    private static final String path = System.getProperty("user.dir")+"\\src\\java\\DecisionTree\\"; // Change this pls
-
     public static void main(String[] args) {
         ArrayList<Entry> all = (ArrayList<Entry>) read(args[0]);
 
         DecisionTree dt = new DecisionTree(all);
         Node root = dt.ID3pp();
         Node.print(root);
-        
+
         if (args.length > 1) {
             ArrayList<Entry> test = (ArrayList<Entry>) read(args[1]);
             dt.check_loo(root, test);
@@ -24,7 +22,7 @@ public class Main {
         ArrayList<Entry> all = new ArrayList<>();
 
         try {
-            Scanner cvs = new Scanner(new File(path+filename));
+            Scanner cvs = new Scanner(new File(filename));
 
             String line = cvs.nextLine();
             String[] sep = line.split(",");
